@@ -51,6 +51,7 @@
 		302607811F87733F00C7ADC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3026078D1F87748100C7ADC1 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = IntroViewController.swift; path = pagesUITests/IntroViewController.swift; sourceTree = SOURCE_ROOT; };
 		3026078F1F87759200C7ADC1 /* ArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
+		302607931F8788D200C7ADC1 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +82,7 @@
 		302607531F87733F00C7ADC1 = {
 			isa = PBXGroup;
 			children = (
+				302607931F8788D200C7ADC1 /* README.md */,
 				3026075E1F87733F00C7ADC1 /* pages */,
 				302607731F87733F00C7ADC1 /* pagesTests */,
 				3026077E1F87733F00C7ADC1 /* pagesUITests */,
