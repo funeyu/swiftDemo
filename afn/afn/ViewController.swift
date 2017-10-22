@@ -10,9 +10,18 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        let param = ["q": "language:python", "sort": "stars"]
+        AFNHelper.get(urlString: "/search/repositories", parameters: param,
+                      success: {(response) in
+                        print(response)
+        },
+                      fail: {(error) in
+                        print(error)
+        })
     }
 
     override func didReceiveMemoryWarning() {

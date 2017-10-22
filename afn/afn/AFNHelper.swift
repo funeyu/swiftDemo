@@ -12,23 +12,24 @@ import AFNetworking
 class AFNHelper: AFHTTPSessionManager {
     
     static let share: AFNHelper = {
-        let baseUrl = "https://api.github.com/"
+        let baseUrl = "https://api.github.com"
         let manager = AFNHelper(baseURL: URL(string: baseUrl), sessionConfiguration: URLSessionConfiguration.default)
         manager.responseSerializer.acceptableContentTypes = NSSet(objects: "application/json", "text/json", "text/javascript",
                                                                   "text/plain", "text/html") as? Set<String>
         return manager
     }()
     
-    class func get(urlString: String, parameters: AnyObject?,
+    class func get(urlString: String, parameters: Any?,
                    success: ((_ response: Any?) -> Void)?,
-                   failure: ((_ error: NSError) -> Void)?) -> Void {
-        AFNHelper.share.get(urlString, parameters: parameters, progress: { (progress) in },
+                   fail: ((_ error: Error) -> Void)?) {
+        
+        AFNHelper.share.get(urlString, parameters: parameters, progress: nil,
                             success: {(task, response) in
                                 if response != nil {
-                                    success!(response as Any)
+                                    success!(response)
                                 }
-        }) { (task, error) in
-            failure(error)
-        }
+                            }) { (task: URLSessionTask?, error: Error) in
+                                fail!(error)
+                            }
     }
 }
