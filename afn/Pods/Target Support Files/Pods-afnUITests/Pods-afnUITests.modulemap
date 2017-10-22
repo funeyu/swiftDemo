@@ -1,0 +1,6 @@
+framework module Pods_afnUITests {
+  umbrella header "Pods-afnUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
